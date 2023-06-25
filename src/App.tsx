@@ -1,6 +1,5 @@
 import "./App.css";
 import { useCallback } from "react";
-import viteLogo from "/vite.svg";
 import {
   CtxAsync,
   useCachedState,
@@ -9,6 +8,7 @@ import {
   useSync,
 } from "@vlcn.io/react";
 import reactLogo from "./assets/react.svg";
+import tinybaseLogo from "./assets/tinybase.svg";
 import vlcnLogo from "./assets/vlcn.png";
 import randomWords from "./support/randomWords.js";
 import SyncWorker from "./sync-worker.js?worker";
@@ -54,17 +54,17 @@ function App({ dbname }: { dbname: string }) {
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+        <a href="https://vlcn.io" target="_blank">
+          <img src={vlcnLogo} className="logo vlcn" alt="Vulcan logo" />
+        </a>
+        <a href="https://tinybase.org" target="_blank">
+          <img src={tinybaseLogo} className="logo" alt="TinyBase logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
-        <a href="https://vlcn.io" target="_blank">
-          <img src={vlcnLogo} className="logo vlcn" alt="Vulcan logo" />
-        </a>
       </div>
-      <h1>Vite + React + Vulcan</h1>
+      <h1>CR-SQLite + TinyBase + React</h1>
       <div className="card">
         <button onClick={addData} style={{ marginRight: "1em" }}>
           Add Data
