@@ -1,10 +1,16 @@
-import { CtxAsync, useCachedState, useQuery, useSync } from "@vlcn.io/react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import vlcnLogo from "./assets/vlcn.png";
 import "./App.css";
+import { useCallback } from "react";
+import viteLogo from "/vite.svg";
+import {
+  CtxAsync,
+  useCachedState,
+  useDB,
+  useQuery,
+  useSync,
+} from "@vlcn.io/react";
+import reactLogo from "./assets/react.svg";
+import vlcnLogo from "./assets/vlcn.png";
 import randomWords from "./support/randomWords.js";
-import { useDB } from "@vlcn.io/react";
 import SyncWorker from "./sync-worker.js?worker";
 
 type TestRecord = { id: string; name: string };
@@ -34,16 +40,16 @@ function App({ dbname }: { dbname: string }) {
     "SELECT * FROM test ORDER BY id DESC"
   ).data;
 
-  const addData = () => {
+  const addData = useCallback(() => {
     ctx.db.exec("INSERT INTO test (id, name) VALUES (?, ?);", [
       nanoid(10),
       randomWords(wordOptions) as string,
     ]);
-  };
+  }, [ctx.db]);
 
-  const dropData = () => {
+  const dropData = useCallback(() => {
     ctx.db.exec("DELETE FROM test;");
-  };
+  }, [ctx.db]);
 
   return (
     <>
