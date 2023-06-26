@@ -1,30 +1,53 @@
-# vite-starter
+# vite-tinybase-ts-react-crsqlite
 
-Getting started with pnpm/npm/yarn create:
+This is a [Vite](https://vitejs.dev/) template for a simple app, using TypeScript and React, that
+integrates [TinyBase](https://tinybase.org/) with [Vulcan](https://github.com/vlcn-io)'s cr-sqlite to provide persistence and synchronization
+across clients.
 
+It is a fork of the awesome [Vulcan
+vite-starter](https://github.com/vlcn-io/vite-starter) app, with small changes
+to introduce TinyBase into the view layer. All the credit for the magic goes to
+the [cr-sqlite](https://github.com/vlcn-io/cr-sqlite) project!
+
+Try a deployed demo
+[here](https://vite-tinybase-ts-react-crsqlite.fly.dev).
+It should look like this:
+
+![A four-way sync between browsers](fourway.png)
+
+## Instructions
+
+1. Make a copy of this template into a new directory:
+
+```sh
+npx degit tinyplex/vite-tinybase-ts-react-crsqlite my-tinybase-app
 ```
-# npm
-npm create @vlcn.io@latest your-app-name
-# pnpm
-pnpm create @vlcn.io your-app-name
-# yarn
-yarn create @vlcn.io your-app-name
+
+2. Go into the directory:
+
+```sh
+cd my-tinybase-app
 ```
 
-Or, just cloning directly:
+3. Install the dependencies:
 
-```
-git clone git@github.com:vlcn-io/vite-starter.git
+```sh
 npm install
-npm dev
 ```
 
-What you get:
-- A client ([App.tsx](https://github.com/vlcn-io/vite-starter/blob/main/src/App.tsx)) that runs a SQLite DB
-- A server ([server.js](https://github.com/vlcn-io/vite-starter/blob/main/server.js)) that the client (or many clients) can sync to when online
-- A database schema file ([schemas/main.mjs](https://github.com/vlcn-io/vite-starter/blob/main/src/schemas/main.mjs) that is automatically migrated to (auto migration is still in beta! You may find yourself needing to wipe the DB (clear indexeddb or change dbid) when using auto-migrate) on server and client restart.
+4. Run the application:
 
+```sh
+npm run dev
+```
 
-Demo Video: [![example scaffolding result](https://img.youtube.com/vi/QJBQLYmXReI/0.jpg)](https://www.youtube.com/watch?v=QJBQLYmXReI)
+5. Go the URL shown and enjoy! Open up multiple windows to see the
+   synchronization in all its glory.
 
-Deployed Scaffolding: https://vite-starter2.fly.dev/ Try it out! Collaborate between all your devices.
+## License
+
+This template has no license, and so you can use it however you want!
+[TinyBase](https://github.com/tinyplex/tinybase/blob/main/LICENSE),
+[cr-sqlite](https://github.com/vlcn-io/cr-sqlite/blob/main/LICENSE), and
+[Vite](https://github.com/vitejs/vite/blob/main/LICENSE) themselves are each MIT
+licensed.
