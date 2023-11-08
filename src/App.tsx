@@ -13,16 +13,36 @@ import {
   useSetCellCallback,
 } from "tinybase/debug/ui-react";
 import { DB } from "@vlcn.io/crsqlite-wasm";
-import { useDB } from "@vlcn.io/react";
+import { useDB, useSync } from "@vlcn.io/react";
 import reactLogo from "./assets/react.svg";
 import tinybaseLogo from "./assets/tinybase.svg";
 import vlcnLogo from "./assets/vlcn.png";
 import randomWords from "./support/randomWords.js";
+import SyncWorker from "./sync-worker.js?worker";
 
 const wordOptions = { exactly: 3, join: " " };
 
+function getEndpoint() {
+  let proto = "ws:";
+  const host = window.location.host;
+  if (window.location.protocol === "https:") {
+    proto = "wss:";
+  }
+
+  return `${proto}//${host}/sync`;
+}
+
+const worker = new SyncWorker();
+
 function App({ dbname }: { dbname: string }) {
   const ctx = useDB(dbname);
+  useSync({
+    dbname,
+    endpoint: getEndpoint(),
+    room: dbname,
+    worker,
+  });
+
   const store = useCreateStore(createStore);
   useCreatePersister(
     store,
