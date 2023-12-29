@@ -1,7 +1,7 @@
-import App from "./App.tsx";
-import schemaContent from "./schemas/main.sql?raw";
-import { DBProvider } from "@vlcn.io/react";
 import { useEffect, useState } from "react";
+import { DBProvider } from "@vlcn.io/react";
+import App from "./App.tsx";
+import schemaContent from "./schemas/main2.sql?raw";
 
 /**
  * Generates a random room name to sync with or pulls one from local storage.
@@ -41,7 +41,7 @@ export default function Root() {
     <DBProvider
       dbname={theRoom}
       schema={{
-        name: "main.sql",
+        name: "main2.sql",
         content: schemaContent,
       }}
       Render={() => <App dbname={theRoom} />}
