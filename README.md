@@ -9,9 +9,7 @@ vite-starter](https://github.com/vlcn-io/vite-starter) app, with small changes
 to introduce TinyBase into the view layer. All the credit for the magic goes to
 the [cr-sqlite](https://github.com/vlcn-io/cr-sqlite) project!
 
-Try a deployed demo
-[here](https://vite-tinybase-ts-react-crsqlite.fly.dev).
-It should look like this:
+When you're up and running, the app should look like this:
 
 ![A four-way sync between browsers](fourway.png)
 
