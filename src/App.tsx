@@ -1,7 +1,7 @@
 import "./App.css";
 import { useCallback } from "react";
-import { createStore } from "tinybase/debug";
-import { createCrSqliteWasmPersister } from "tinybase/debug/persisters/persister-cr-sqlite-wasm";
+import { createStore } from "tinybase";
+import { createCrSqliteWasmPersister } from "tinybase/persisters/persister-cr-sqlite-wasm";
 import {
   CellProps,
   RowProps,
@@ -11,7 +11,7 @@ import {
   useCreateStore,
   useDelTableCallback,
   useSetCellCallback,
-} from "tinybase/debug/ui-react";
+} from "tinybase/ui-react";
 import { DB } from "@vlcn.io/crsqlite-wasm";
 import { useDB, useSync } from "@vlcn.io/react";
 import reactLogo from "./assets/react.svg";
