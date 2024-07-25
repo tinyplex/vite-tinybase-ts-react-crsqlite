@@ -18,7 +18,7 @@ When you're up and running, the app should look like this:
 1. Make a copy of this template into a new directory:
 
 ```sh
-npx degit tinyplex/vite-tinybase-ts-react-crsqlite my-tinybase-app
+npx tiged tinyplex/vite-tinybase-ts-react-crsqlite my-tinybase-app
 ```
 
 2. Go into the directory:
