@@ -1,5 +1,8 @@
 # vite-tinybase-ts-react-crsqlite
 
+NOTE: [cr-sqlite](https://github.com/vlcn-io/cr-sqlite) is no longer under
+active maintenance, so nor is this Vite template. Sorry!
+
 This is a [Vite](https://vitejs.dev/) template for a simple app, using TypeScript and React, that
 integrates [TinyBase](https://tinybase.org/) with [Vulcan](https://github.com/vlcn-io)'s cr-sqlite to provide persistence and synchronization
 across clients.
